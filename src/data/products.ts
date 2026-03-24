@@ -25,17 +25,17 @@ export interface Product {
 
 export const products: Product[] = [
   {
-    key: "works",
-    label: "Works",
-    icon: "FolderKanban",
-    desc: "Quản lý dự án và quy trình làm việc, theo dõi tiến độ nhóm hiệu quả.",
-    url: "https://works.operis.vn",
+    key: "news",
+    label: "News",
+    icon: "Newspaper",
+    desc: "Nền tảng tin tức và truyền thông nội bộ, cập nhật thông tin nhanh chóng.",
+    url: "https://news.operis.vn",
     gradient: "from-emerald-400 to-teal-500",
-    preview: "/previews/works.png",
+    preview: "/previews/news.png",
     children: [
-      { label: "Kanban", icon: "LayoutGrid" },
-      { label: "Timeline", icon: "GanttChart" },
-      { label: "Sprint", icon: "Zap" },
+      { label: "Articles", icon: "FileText" },
+      { label: "Trending", icon: "TrendingUp" },
+      { label: "Digest", icon: "BookOpen" },
     ],
   },
   {

@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-background: #0a0e1a;
+  --color-background: #0d0d0d;
   --color-foreground: #e2e8f0;
   --color-emerald-50: #ecfdf5;
   --color-emerald-100: #d1fae5;
@@ -18,8 +18,9 @@
 }
 
 html { scroll-behavior: smooth; }
+
 body {
-  background: #0a0e1a;
+  background: #0d0d0d;
   color: #e2e8f0;
 }
 
@@ -49,7 +50,6 @@ body {
   100% { opacity: 1; }
 }
 
-
 /* ═══════ ORBIT KEYFRAME (Magic UI) ═══════ */
 
 @keyframes orbit {
@@ -67,7 +67,7 @@ body {
   }
 }
 
-/* ═══════ HERO BACKDROP — COSMIC ═══════ */
+/* ═══════ HERO BACKDROP ═══════ */
 
 .hero-backdrop {
   position: absolute;
@@ -102,7 +102,7 @@ body {
   50% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.8; }
 }
 
-/* ═══════ FLOATING NEBULA BLOBS ═══════ */
+/* ═══════ FLOATING NEBULA BLOBS (hero) ═══════ */
 
 @keyframes float-blob-1 {
   0%, 100% { transform: translate(0, 0); }
@@ -135,7 +135,31 @@ body {
   pointer-events: none;
 }
 
-/* ═══════ CENTER GLOW — COSMIC ═══════ */
+/* ═══════ FLOATING SIDE BADGES ═══════ */
+
+@keyframes float-y-1 {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+@keyframes float-y-2 {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(10px); }
+}
+@keyframes float-y-3 {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+@keyframes float-y-4 {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(14px); }
+}
+
+.float-badge-1 { animation: float-y-1 6s ease-in-out infinite; }
+.float-badge-2 { animation: float-y-2 8s ease-in-out infinite 1s; }
+.float-badge-3 { animation: float-y-3 7s ease-in-out infinite 0.5s; }
+.float-badge-4 { animation: float-y-4 9s ease-in-out infinite 2s; }
+
+/* ═══════ CENTER GLOW ═══════ */
 
 @keyframes center-pulse {
   0%, 100% { opacity: 0.4; transform: scale(1); }
@@ -209,14 +233,12 @@ body {
   font-weight: 500;
 }
 
-/* ═══════ PLANET CARD — ORBIT SATELLITES ═══════ */
+/* ═══════ PLANET CARD ═══════ */
 
 .planet-card {
   text-decoration: none;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.planet-card {
   z-index: 20;
 }
 .planet-card:hover {
@@ -282,8 +304,7 @@ body {
   text-decoration: none;
   white-space: nowrap;
   cursor: pointer;
-
-  background: rgba(15,23,42,0.75);
+  background: rgba(20,20,20,0.85);
   -webkit-backdrop-filter: blur(20px) saturate(1.4);
   backdrop-filter: blur(20px) saturate(1.4);
   border: 1px solid rgba(16,185,129,0.15);
@@ -291,12 +312,11 @@ body {
     0 4px 24px rgba(0,0,0,0.3),
     0 1px 3px rgba(16,185,129,0.08),
     inset 0 1px 0 rgba(255,255,255,0.05);
-
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .sat-card:hover {
   transform: scale(1.06);
-  background: rgba(15,23,42,0.9);
+  background: rgba(28,28,28,0.95);
   border-color: rgba(16,185,129,0.40);
   box-shadow:
     0 8px 40px rgba(16,185,129,0.20),
@@ -305,39 +325,13 @@ body {
   z-index: 30;
 }
 
-
-/* ═══════ SCROLL ═══════ */
+/* ═══════ SCROLL INDICATOR ═══════ */
 
 @keyframes scroll-bounce {
   0%, 100% { transform: translateY(0); opacity: 0.3; }
   50% { transform: translateY(8px); opacity: 0.7; }
 }
 .scroll-indicator { animation: scroll-bounce 2.5s ease-in-out infinite; }
-
-/* ═══════ SCROLLBAR HIDE ═══════ */
-
-.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
-.scrollbar-hide::-webkit-scrollbar { display: none; }
-
-/* ═══════ CTA BANNER ═══════ */
-
-.cta-banner {
-  box-shadow: 0 20px 60px rgba(16,185,129,0.15), 0 4px 20px rgba(0,0,0,0.3);
-}
-
-/* ═══════ SECTION DIVIDER ═══════ */
-
-.section-glow-top {
-  position: relative;
-}
-.section-glow-top::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 50%;
-  transform: translateX(-50%);
-  width: 60%; height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(16,185,129,0.3), transparent);
-}
 
 /* ═══════ HERO INTRO ANIMATION ═══════ */
 
@@ -349,7 +343,6 @@ body {
   80% { transform: scale(1.02); }
   100% { opacity: 1; transform: scale(1); filter: blur(0); }
 }
-
 @keyframes intro-orbits {
   0% { opacity: 0; transform: scale(0) rotate(-30deg); }
   55% { opacity: 0; transform: scale(0) rotate(-30deg); }
@@ -357,13 +350,11 @@ body {
   90% { opacity: 1; transform: scale(0.98) rotate(-0.5deg); }
   100% { opacity: 1; transform: scale(1) rotate(0deg); }
 }
-
 @keyframes intro-badge {
   0%, 65% { opacity: 0; transform: translateY(12px) scale(0.9); }
   85% { opacity: 1; transform: translateY(-2px) scale(1.02); }
   100% { opacity: 1; transform: translateY(0) scale(1); }
 }
-
 @keyframes intro-subtitle {
   0%, 70% { opacity: 0; letter-spacing: 0.3em; }
   100% { opacity: 1; letter-spacing: 0.14em; }
@@ -372,36 +363,21 @@ body {
 .hero-intro-title {
   animation: intro-title 2.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
-
 .hero-intro-badge {
   opacity: 0;
   animation: intro-badge 2.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
-
 .hero-intro-subtitle {
   opacity: 0;
   animation: intro-subtitle 2.5s ease forwards;
 }
-
 .hero-intro-orbits {
   opacity: 0;
   animation: intro-orbits 3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
-
 .hero-intro-glow {
   opacity: 0;
   animation: intro-orbits 2.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-/* ═══════ FOOTER ═══════ */
-
-/* ═══════ DECORATIVE ORBIT RINGS ═══════ */
-
-.orbit-ring {
-  animation: center-ring-rotate 60s linear infinite;
-}
-.orbit-ring-reverse {
-  animation: center-ring-rotate 45s linear infinite reverse;
 }
 
 /* ═══════ FLOATING PARTICLES ═══════ */
@@ -427,7 +403,7 @@ body {
 /* ═══════ HERO BG ═══════ */
 
 .hero-bg {
-  background: #0a0e1a url('/images/bg-space.jpg') center/cover no-repeat;
+  background: #0d0d0d url('/images/bg-space.jpg') center/cover no-repeat;
 }
 
 /* ═══════ SIDEBAR SCROLL ═══════ */
@@ -437,103 +413,36 @@ body {
 .sidebar-scroll::-webkit-scrollbar-thumb { background: rgba(148,163,184,0.15); border-radius: 4px; }
 .sidebar-scroll::-webkit-scrollbar-thumb:hover { background: rgba(148,163,184,0.3); }
 
-/* ═══════ INTRO SECTION DECORATIONS ═══════ */
+/* ═══════ BANNER NOISE OVERLAY ═══════ */
 
-/* Central spotlight glow */
-.intro-spotlight {
-  position: absolute;
-  top: 10%; left: 50%;
-  transform: translateX(-50%);
-  width: 800px; height: 600px;
-  border-radius: 50%;
-  background:
-    radial-gradient(ellipse at 40% 40%, rgba(16,185,129,0.12) 0%, transparent 50%),
-    radial-gradient(ellipse at 65% 55%, rgba(52,211,153,0.08) 0%, transparent 45%),
-    radial-gradient(ellipse at 50% 50%, rgba(59,130,246,0.05) 0%, transparent 60%);
-  animation: intro-spotlight-breathe 8s ease-in-out infinite;
-  pointer-events: none;
-}
-@keyframes intro-spotlight-breathe {
-  0%, 100% { opacity: 0.6; transform: translateX(-50%) scale(1); }
-  50% { opacity: 1; transform: translateX(-50%) scale(1.08); }
-}
-
-.intro-blob-1 {
-  position: absolute;
-  top: 8%; right: 5%;
-  width: 420px; height: 420px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(16,185,129,0.15), transparent 65%);
-  filter: blur(70px);
-  animation: float-blob-1 16s ease-in-out infinite;
-  pointer-events: none;
-}
-.intro-blob-2 {
-  position: absolute;
-  bottom: 5%; left: 8%;
-  width: 350px; height: 350px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(59,130,246,0.10), transparent 65%);
-  filter: blur(70px);
-  animation: float-blob-2 20s ease-in-out infinite;
-  pointer-events: none;
-}
-.intro-blob-3 {
-  position: absolute;
-  top: 45%; left: 35%;
-  width: 300px; height: 300px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(139,92,246,0.07), transparent 65%);
-  filter: blur(60px);
-  animation: float-blob-1 24s ease-in-out infinite reverse;
-  pointer-events: none;
-}
-
-/* Accent light streaks */
-.intro-streak {
-  position: absolute;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(16,185,129,0.3), rgba(52,211,153,0.15), transparent);
-  pointer-events: none;
-}
-.intro-streak-1 {
-  top: 22%; left: 10%; right: 30%;
-  transform: rotate(-3deg);
-  animation: intro-streak-shimmer 6s ease-in-out infinite;
-}
-.intro-streak-2 {
-  bottom: 28%; left: 25%; right: 8%;
-  transform: rotate(2deg);
-  animation: intro-streak-shimmer 8s ease-in-out 2s infinite;
-}
-@keyframes intro-streak-shimmer {
-  0%, 100% { opacity: 0.3; }
-  50% { opacity: 0.8; }
-}
-
-/* Floating particles for intro */
-.intro-particles {
+.banner-noise {
   position: absolute;
   inset: 0;
-  background-image:
-    radial-gradient(2px 2px at 18% 15%, rgba(16,185,129,0.5) 0%, transparent 100%),
-    radial-gradient(2px 2px at 75% 20%, rgba(52,211,153,0.4) 0%, transparent 100%),
-    radial-gradient(1.5px 1.5px at 42% 65%, rgba(59,130,246,0.35) 0%, transparent 100%),
-    radial-gradient(2.5px 2.5px at 88% 55%, rgba(16,185,129,0.45) 0%, transparent 100%),
-    radial-gradient(1.5px 1.5px at 25% 80%, rgba(52,211,153,0.3) 0%, transparent 100%),
-    radial-gradient(2px 2px at 65% 42%, rgba(16,185,129,0.35) 0%, transparent 100%),
-    radial-gradient(1px 1px at 50% 10%, rgba(139,92,246,0.3) 0%, transparent 100%),
-    radial-gradient(2px 2px at 8% 50%, rgba(52,211,153,0.4) 0%, transparent 100%),
-    radial-gradient(1.5px 1.5px at 92% 75%, rgba(59,130,246,0.3) 0%, transparent 100%),
-    radial-gradient(2px 2px at 35% 35%, rgba(16,185,129,0.3) 0%, transparent 100%);
-  animation: particles-drift 18s ease-in-out infinite alternate;
+  opacity: 0.2;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  pointer-events: none;
 }
 
-.intro-ring {
-  animation: center-ring-rotate 40s linear infinite;
-}
-.intro-ring-reverse {
-  animation: center-ring-rotate 30s linear infinite reverse;
+/* ═══════ DOT GRID ═══════ */
+
+.intro-dot-grid-visible {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(148,163,184,0.12) 1px, transparent 1px);
+  background-size: 28px 28px;
+  pointer-events: none;
 }
 
-.footer-link { text-decoration: none; }
+/* ═══════ GLOBAL NOISE GRAIN ═══════ */
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-size: 256px 256px;
+}

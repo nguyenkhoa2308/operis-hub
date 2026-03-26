@@ -1,16 +1,10 @@
 import type { Metadata } from "next";
-import { Nunito } from "next/font/google";
 import "./globals.css";
-
-const nunito = Nunito({
-  variable: "--font-nunito",
-  subsets: ["latin", "vietnamese"],
-});
 
 export const metadata: Metadata = {
   title: "Operis — Hệ sinh thái công cụ số",
   description:
-    "Operis là hệ sinh thái sản phẩm số. Mỗi công cụ hoạt động độc lập nhưng kết nối liền mạch.",
+    "Operis - Hệ sinh thái công cụ số thế hệ mới. Kiến tạo tương lai số thông qua trí tuệ nhân tạo.",
   icons: {
     icon: "/images/logo.png",
     shortcut: "/images/logo.png",
@@ -24,11 +18,24 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="vi" className={`${nunito.variable} antialiased`}>
+    <html lang="vi" className="antialiased">
       <head>
-        <link rel="preload" as="image" href="/images/bg-space.jpg" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+          rel="stylesheet"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+          rel="stylesheet"
+        />
       </head>
-      <body className="min-h-screen font-sans text-slate-200 bg-[#0d0d0d]">
+      <body className="op-root min-h-screen">
         {children}
       </body>
     </html>

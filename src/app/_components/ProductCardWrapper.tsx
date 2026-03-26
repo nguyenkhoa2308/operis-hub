@@ -43,6 +43,7 @@ export function ProductCardWrapper({ product, span, children }: Props) {
           src={product.preview}
           alt={product.label}
           fill
+          sizes="(max-width: 768px) 100vw, 66vw"
           className="object-cover opacity-40 group-hover:opacity-60 transition-opacity z-0"
         />
       )}

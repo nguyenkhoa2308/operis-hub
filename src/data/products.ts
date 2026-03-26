@@ -45,7 +45,7 @@ export const products: Product[] = [
     desc: "Mô hình dữ liệu và AI, xử lý thông minh phục vụ vận hành tự động.",
     url: "https://models.operis.vn",
     gradient: "from-teal-400 to-emerald-500",
-    preview: "",
+    preview: "/previews/models.webp",
     children: [
       { label: "ChatGPT", icon: "MessageSquare" },
       { label: "Claude", icon: "Sparkles" },
@@ -60,7 +60,7 @@ export const products: Product[] = [
     desc: "Nền tảng quản lý nhân sự và tuyển dụng, kết nối đúng người đúng việc.",
     url: "https://talent.operis.vn",
     gradient: "from-emerald-500 to-green-600",
-    preview: "/previews/talents.webp",
+    preview: "/previews/talent.webp",
     children: [
       { label: "Profiles", icon: "UserCircle" },
       { label: "Recruit", icon: "UserPlus" },
@@ -72,9 +72,9 @@ export const products: Product[] = [
     label: "Academy",
     icon: "BookOpen",
     desc: "Nền tảng học tập và đào tạo trực tuyến, nâng cao kỹ năng đội ngũ.",
-    url: "https://media.operis.vn",
+    url: "https://academy.operis.vn",
     gradient: "from-green-500 to-emerald-600",
-    preview: "",
+    preview: "/previews/academy.webp",
     comingSoon: false,
     children: [
       { label: "Courses", icon: "GraduationCap" },
